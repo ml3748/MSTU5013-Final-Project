@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <elpage></elpage>
+    <menu></menu>
+    test
+  </body>
+</html>
+
+
+<script src="tags/elpage.tag" type="riot/tag"></script>
+<script src="tags/menu.tag" type="riot/tag"></script>
+
+<script src="https://cdn.jsdelivr.net/riot/3.1/riot+compiler.js"></script>
+<script src="https://www.gstatic.com/firebasejs/4.13.0/firebase.js"></script>
+
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyArb04-kkBQ1Uvyl7z6zwCgK7WB-Qrp4jo",
+    authDomain: "mstu5013-final-project.firebaseapp.com",
+    databaseURL: "https://mstu5013-final-project.firebaseio.com",
+    projectId: "mstu5013-final-project",
+    storageBucket: "mstu5013-final-project.appspot.com",
+    messagingSenderId: "939854185114"
+  };
+  firebase.initializeApp(config);
+
+  // Initialize Riot
+  riot.mount('*');
+
+</script>
