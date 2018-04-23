@@ -1,6 +1,5 @@
 <elpage>
 
-<p>test</p>
 
 <elitem></elitem>
 
