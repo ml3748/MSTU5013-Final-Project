@@ -7,16 +7,17 @@
   <body>
     <elpage></elpage>
     <menu></menu>
-    test
   </body>
 </html>
 
-
+<script src="tags/elitem.tag" type="riot/tag"></script>
 <script src="tags/elpage.tag" type="riot/tag"></script>
 <script src="tags/menu.tag" type="riot/tag"></script>
 
 <script src="https://cdn.jsdelivr.net/riot/3.1/riot+compiler.js"></script>
 <script src="https://www.gstatic.com/firebasejs/4.13.0/firebase.js"></script>
+
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
 
 <script>
   // Initialize Firebase
@@ -29,6 +30,10 @@
     messagingSenderId: "939854185114"
   };
   firebase.initializeApp(config);
+
+  // Firebase Cached References
+  var database = firebase.database();
+  var rootRef = database.ref('/')
 
   // Initialize Riot
   riot.mount('*');
