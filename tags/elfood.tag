@@ -10,8 +10,8 @@
  console.log('elfood', this);
 
  this.menu = function() {
-
-
+   console.log(this.specificFood.name);
+   this.parent.parent.parent.toggleCuisines(this.specificFood.name);
  };
 
  </script>

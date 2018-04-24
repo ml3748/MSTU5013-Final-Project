@@ -1,5 +1,5 @@
 <elitem>
-  <h3> Vitamin A </h3>
+  <h3> Vitamine A </h3>
   <div class="container-fluid">
    <div class="col-md-12 item">
     <elfood class="col-md-4" each={ specificFood in foodItem }></elfood>
