@@ -2,8 +2,24 @@
   <carrot each={ carrotCuisine in menuType }></carrot>
 
 <script>
-  // var tag = this;
-  // this.allMenu = [];
+  var tag = this;
+  this.allMenu = [];
+
+
+    var menuRef = database.ref('/food');
+
+    menuRef.on('value',function(snap){
+      var data = snap.val();
+
+      tag.allMenu = [];
+      for (menu in data) {
+        tag.allMenu.push(data[menu]);
+      };
+      tag.update();
+      console.log('allMenu', tag.allMenu);
+    });
+
+
   // console.log('carrot', this.carrot);
   // console.log('menu', this);
   //
