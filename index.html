@@ -2,7 +2,9 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title></title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Nutrition</title>
   </head>
   <body>
     <elpage></elpage>
@@ -10,15 +12,15 @@
   </body>
 </html>
 
+
 <script src="tags/elpage.tag" type="riot/tag"></script>
+<script src="tags/menu.tag" type="riot/tag"></script>
 <script src="tags/elfood.tag" type="riot/tag"></script>
 <script src="tags/elitem.tag" type="riot/tag"></script>
-<script src="tags/menu.tag" type="riot/tag"></script>
+<script src="tags/carrot.tag" type="riot/tag"></script>
 
 <script src="https://cdn.jsdelivr.net/riot/3.1/riot+compiler.js"></script>
 <script src="https://www.gstatic.com/firebasejs/4.13.0/firebase.js"></script>
-
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
 <script>
   // Initialize Firebase
@@ -32,9 +34,8 @@
   };
   firebase.initializeApp(config);
 
-  // Firebase Cached References
+  // Global Cached -> Most useful Firebase refs accessible anywhere.
   var database = firebase.database();
-  var rootRef = database.ref('/')
 
   // Initialize Riot
   riot.mount('*');

@@ -1,15 +1,24 @@
 <elfood>
-   <div class="col">
-     <img class = "rounded img-fluid" src= {fooditem.src} alt="picture">
-     <span> {fooditem.name} </span>
+   <div class="col-md-4">
+     <img class = "rounded img-responsive" src={ specificFood.src } alt="picture" onclick={ menu }>
+     <span>{ specificFood.name }</span>
    </div>
 
 
 
  <script>
- console.log('elfood.tag');
+ console.log('elfood', this);
+
+ this.menu = function() {
+
+
+ };
+
  </script>
 
  <style>
+
  </style>
+
+
 </elfood>
