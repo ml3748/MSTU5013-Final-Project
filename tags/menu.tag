@@ -1,53 +1,66 @@
 <menu>
-  <carrot each={ carrotCuisine in menuType }></carrot>
+<!-- The menu page; after the foodlist page -->
 
-<script>
-  var tag = this;
-  this.allMenu = [];
+  <div class="item">
+    <cuisine each={ cuisine in cuisineType }></cuisine>
+  </div>
 
 
-    var menuRef = database.ref('/food');
 
-    menuRef.on('value',function(snap){
+  <script>
+    var tag = this;
+    this.allMenu = [];
+    this.cuisineType = [];
+
+    console.log('menu tag', this);
+
+    var menuRef = database.ref('/cuisineByFood');
+    // var cuisineRef = menuRef.child('/');
+
+    // console.log('menuRef', menuRef);
+    // console.log('cuisineRef', cuisineRef);
+        //var id = menuRef.push().key;
+
+    // var cuisineRef = database.ref('/cusineByFood' + '/' + this.id);
+    //
+    // console.log(id);
+    //
+    menuRef.on('value', function (snap) {
       var data = snap.val();
 
       tag.allMenu = [];
+      tag.cuisineType = [];
+
       for (menu in data) {
         tag.allMenu.push(data[menu]);
+        var menuone = data[menu];
+        console.log('menu', menuone);
+
+        for (cuisine in menuone) {
+        tag.cuisineType.push(menuone[cuisine]);
+        console.log('datamenu', cuisine);
+        };
       };
-      tag.update();
-      console.log('allMenu', tag.allMenu);
+        tag.update();
     });
 
-
-  // console.log('carrot', this.carrot);
-  // console.log('menu', this);
-  //
-  //
-  // var menuRef = database.ref('/food');
-  // var carrotRef = menuRef.child('/a' + '/carrot');
-  // // var bRef = elementRef.child('/b');
-  //
-  //
-  // menuRef.on('value',function(snap){
-  //   var data = snap.val();
-  //
-  //   tag.allMenu = [];
-  //   for (menu in data) {
-  //     tag.allMenu.push(data[menu]);
-  //   };
-  //   tag.update();
-  //   console.log('allMenu', tag.allMenu);
-  //   // console.log(tag.bFood);
-  // });
-  //
-  //
-  // var foodPath = 'food/' + this.element + '/';
-
-</script>
+    //
+    // cuisineRef.on('value', function (snap) {
+    //   var menu = tag.allMenu;
+    //
+    //   tag.cuisineType = [];
+    //   for (cuisine in menu) {
+    //     tag.cuisineType.push(menu[cuisine]);
+    //   };
+    //   tag.update();
+    //   console.log('cusineType', tag.cuisineType);
+    // });
 
 
+  </script>
 
+  <style>
+  </style>
 
 
 </menu>

@@ -1,28 +1,27 @@
 <app>
-  <div hide={ this.showmenu }>
-   <elpage show={ noCuisine }></elpage>
+<!-- This is the main tag -->
 
-   <div hide={ noCuisine } food={ food }>cuisine page</div>
-  </div>
-  <div if={ this.showmenu }>
-  <menu></menu>
+  <div>
+    <foodpage show={ showFoodList }></foodpage>
   </div>
 
+  <div if={ this.showMenu }>
+    <menu food={ food }>Menu</menu>
+  </div>
 
- <script>
-   this.showmenu = false;
-   this.noCuisine = true;
-   console.log(this.showmenu);
-   this.update();
+
+  <script>
+   this.showFoodList = true;
+   this.showMenu = false;
 
    toggleCuisines(food) {
      alert(food);
-     this.noCuisine = false;
+     this.showFoodList = false;
+     this.showMenu = true;
      this.food = food;
      this.update();
    }
 
-
- </script>
+   </script>
 
 </app>
