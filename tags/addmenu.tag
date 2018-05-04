@@ -59,9 +59,9 @@
       var cuisPhoSrc = this.refs.cuiphotosrc.value;
       var mealtype = this.refs.mealtype.value;
 
-      var taste = this.root.querySelector('[name="taste"]:checked').value;
-
-      console.log(taste);
+      // var taste = this.root.querySelector('[name="taste"]:checked').value;
+      //
+      // console.log(taste);
 
       var foodData = {
         element: ele,
@@ -88,8 +88,12 @@
       updates[cuisPath] = cuisData;
 
       database.ref().update(updates);
+      alert("Succeed!");
 
+      //change mode:
+      obervable.trigger('tofoodpage');
     };
+
   </script>
 
 </addmenu>

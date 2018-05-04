@@ -1,16 +1,19 @@
 <menu>
   <!-- The menu page; after the foodpage -->
+  <h1>
+    Menus for {this.opts.food}
+  </h1>
+  <div class="item">
+    <cuisine each={ cuisine in allMenus }></cuisine>
+  </div>
 
+    <button type="button" onclick = { createmenu } >Create your own Menu!</button>
 
-  <h1> Menus for {this.opts.food} </h1>
 
   <script>
 
     console.log(this.opts.food);
-  //
-  // <div class="item">
-  //   <cuisine each={ cuisine in cuisineType }></cuisine>
-  // </div>
+
     var tag = this;
     this.allMenus = [];
     var rootFoodPath = "cuisineByFood/" + this.opts.food;
@@ -20,7 +23,7 @@
     allMenuRef.on('value', function (snap) {
       var data = snap.val();
 
-      tag.allMenus= [];
+      tag.allMenus = [];
       for (menu in data) {
         tag.allMenus.push(data[menu]);
       };
@@ -28,8 +31,10 @@
       console.log(tag.allMenus);
     })
 
+    this.createmenu = function() {
+      observable.trigger('addmenu');
 
-
+    }
   </script>
 
   <style></style>

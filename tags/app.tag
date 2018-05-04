@@ -15,9 +15,9 @@
     this.showFoodList = true;
     this.showMenu = false;
     this.showaddmenu = false;
-    var that=this;
+    var that = this;
 
-    observable.on('clickfood', function(food) {
+    observable.on('clickfood', function (food) {
       alert(food);
       that.showFoodList = false;
       that.showMenu = true;
@@ -25,6 +25,19 @@
       that.update();
     });
 
+    observable.on('addmenu', function () {
+      that.showMenu = false;
+      that.showFoodList = false;
+      that.showaddmenu = true;
+      that.update();
+    });
+
+    observable.on('tofoodpage', function () {
+      that.shwoMenu = false;
+      that.showFoodList = true;
+      that.showaddmenu = false;
+      that.update;
+    })
   </script>
 
 </app>
