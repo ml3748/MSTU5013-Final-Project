@@ -28,7 +28,7 @@
         <option value="e">e</option>
       </select><br>
 
-      <textarea name="name" rows="5" cols="10" class="form-control" placeholder="Steps" ref="steps" ></textarea>
+      <textarea name="name" rows="5" cols="10" class="form-control" placeholder="Steps" ref="steps"></textarea>
 
       <div class="form-group" ref="taste">
         <label><input type="radio" name="taste" value="spicy">Spicy</label>
@@ -50,43 +50,46 @@
     console.log('addmenu page');
     var that = this;
 
-    this.submit = function() {
+    this.submit = function () {
       var cuisName = this.refs.cuisinename.value;
-      var foodName = this.refs.foodName.value;
+      var foodName = this.refs.foodName.value.toLowerCase();
       var foodSrc = this.refs.foodPhotosrc.value;
       var ele = this.refs.element.value;
       var steps = this.refs.steps.value;
       var cuisPhoSrc = this.refs.cuiphotosrc.value;
       var mealtype = this.refs.mealtype.value;
 
-      var foodData = {element: ele,
-                      name: foodName,
-                      src: foodSrc
-                    };
+      var taste = this.root.querySelector('[name="taste"]:checked').value;
+
+      console.log(taste);
+
+      var foodData = {
+        element: ele,
+        name: foodName,
+        src: foodSrc
+      };
 
       var foodPath = "foodsByElement/" + foodName;
 
       console.log(cuisPath);
       var cuiskey = database.ref(cuisPath).push().key;
       var cuisPath = "cuisineByFood/" + foodName + "/" + cuiskey;
-      var cuisData = {food: foodName,
-                       meal: mealtype,
-                       name: cuisName,
-                       src: cuisPhoSrc,
-                       id: cuiskey,
-                       steps: steps
-                     };
+      var cuisData = {
+        food: foodName,
+        meal: mealtype,
+        name: cuisName,
+        src: cuisPhoSrc,
+        id: cuiskey,
+        steps: steps
+      };
 
       var updates = {};
-        	updates[foodPath] = foodData;
-          updates[cuisPath] = cuisData;
+      updates[foodPath] = foodData;
+      updates[cuisPath] = cuisData;
 
       database.ref().update(updates);
 
     };
-
-
-
   </script>
 
 </addmenu>

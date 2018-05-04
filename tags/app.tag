@@ -9,11 +9,11 @@
     <menu food={ food }>Menu</menu>
   </div>
 
-  <addmenu></addmenu>
+  <addmenu if= {this.showMenu}></addmenu>
 
 
   <script>
-   this.showFoodList = false;
+   this.showFoodList = true;
    this.showMenu = false;
 
    // toggleCuisines(food) {
