@@ -1,29 +1,30 @@
 <app>
-<!-- This is the main tag -->
+  <!-- This is the main tag -->
 
   <div>
-    <foodpage if={ showFoodList }></foodpage>
+    <foodpage if={ this.showFoodList }></foodpage>
   </div>
 
   <div if={ this.showMenu }>
     <menu food={ food }>Menu</menu>
   </div>
 
-  <addmenu if= {this.showMenu}></addmenu>
-
+  <addmenu if={ this.showaddmenu}></addmenu>
 
   <script>
-   this.showFoodList = true;
-   this.showMenu = false;
+    this.showFoodList = true;
+    this.showMenu = false;
+    this.showaddmenu = false;
+    var that=this;
 
-   // toggleCuisines(food) {
-   //   alert(food);
-   //   this.showFoodList = false;
-   //   this.showMenu = true;
-   //   this.food = food;
-   //   this.update();
-   // }
+    observable.on('clickfood', function(food) {
+      alert(food);
+      that.showFoodList = false;
+      that.showMenu = true;
+      that.food = food;
+      that.update();
+    });
 
-   </script>
+  </script>
 
 </app>

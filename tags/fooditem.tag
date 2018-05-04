@@ -1,11 +1,22 @@
 <fooditem>
   <!-- food-lists on the first page -->
- <h1> {food.name} </h1>
- <img src={food.src}>
+  <div onclick={ clickfood }>
+    <h1>
+      {food.name}
+    </h1>
+    <img src={food.src}>
+  </div>
 
   <script>
+
+    var that = this;
     console.log('elfood');
 
+    this.clickfood = function (e) {
+      console.log('clicked');
+      var foodName = that.food.name
+      observable.trigger('clickfood', foodName);
+    }
 
   </script>
 
