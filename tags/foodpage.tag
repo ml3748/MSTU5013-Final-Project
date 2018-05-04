@@ -1,7 +1,26 @@
 <foodpage>
   <!-- firstpage -->
   <h1>All the food based on elements</h1>
-  <fooditem each={ food in foodByElementa }></fooditem>
+  <div class="row">
+      <h2>Element a</h2>
+      <fooditem class= "col-xs-4" each={ food in foodByElementa }></fooditem>
+  </div>
+  <div class="row">
+    <h2>Element b</h2>
+      <fooditem class= "col-xs-4" each={ food in foodByElementb }></fooditem>
+  </div>
+  <div class="row">
+    <h2>Element c</h2>
+      <fooditem class= "col-xs-4" each={ food in foodByElementc }></fooditem>
+  </div>
+  <div class="row">
+    <h2>Element d</h2>
+      <fooditem class= "col-xs-4" each={ food in foodByElementd }></fooditem>
+  </div>
+  <div class="row">
+    <h2>Element e</h2>
+      <fooditem class= "col-xs-4" each={ food in foodByElemente }></fooditem>
+  </div>
 
   <script>
     console.log("that");
@@ -36,6 +55,7 @@
 
      console.log(tag.foodByElementa);
 
+     tag.update();
     });
 
     function getFoodByElement(ele) {
