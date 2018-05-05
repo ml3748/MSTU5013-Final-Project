@@ -23,7 +23,8 @@
   </div>
 
   <script>
-    console.log("that");
+  console.log('foodpage', this);
+
     var tag = this;
     this.allFood = [];
     this.foodByElementa = [];
@@ -31,6 +32,8 @@
     this.foodByElementc = [];
     this.foodByElementd = [];
     this.foodByElemente = [];
+
+    this.typeName = [];
 
     var foodsByElemetRef = database.ref('/foodsByElement');
 
@@ -41,6 +44,7 @@
       for (food in data) {
         tag.allFood.push(data[food]);
       };
+
       tag.update();
       //element a:
       tag.foodByElementa = getFoodByElement('a');
@@ -53,14 +57,14 @@
       ///element b:
       tag.foodByElemente = getFoodByElement('e');
 
-      console.log(tag.foodByElementa);
+      console.log('allFood', tag.allFood);
 
       tag.update();
     });
 
-    function getFoodByElement(ele) {
-      return tag.allFood.filter(function (food) {
-        return food.element == ele;
+    function getFoodByElement(element) {
+      return tag.allFood.filter(function(food) {
+        return food.element == element;
       });
     }
   </script>

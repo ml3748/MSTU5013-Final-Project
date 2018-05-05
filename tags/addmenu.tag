@@ -50,7 +50,14 @@
     console.log('addmenu page');
     var that = this;
 
-    this.submit = function () {
+    submit(e) {
+
+      if (this.refs.cuisinename.value === "" || this.refs.foodName.value === "" ) { //why null could not work here?
+      alert("Please add a cuisine name and a food name!");
+      e.preventUpdate = true;// Prevents riot from auto update.
+      return false; // Short-circuits function (function exits here, does not continue.
+      }
+
       var cuisName = this.refs.cuisinename.value;
       var foodName = this.refs.foodName.value.toLowerCase();
       var foodSrc = this.refs.foodPhotosrc.value;
@@ -92,8 +99,8 @@
 
       //change mode:
       obervable.trigger('tofoodpage');
-    };
 
+    };
   </script>
 
 </addmenu>

@@ -2,7 +2,7 @@
   <!-- This is the main tag -->
 
   <div>
-    <foodpage if={ this.showFoodList }></foodpage>
+    <foodpage foodType={ food } if={ this.showFoodList }></foodpage>
   </div>
 
   <div if={ this.showMenu }>
@@ -12,10 +12,11 @@
   <addmenu if={ this.showaddmenu}></addmenu>
 
   <script>
+    var that = this;
     this.showFoodList = true;
     this.showMenu = false;
     this.showaddmenu = false;
-    var that = this;
+    this.food = null;
 
     observable.on('clickfood', function (food) {
       alert(food);
@@ -33,11 +34,12 @@
     });
 
     observable.on('tofoodpage', function () {
-      that.shwoMenu = false;
+      that.showMenu = false;
       that.showFoodList = true;
       that.showaddmenu = false;
       that.update;
     })
+    
   </script>
 
 </app>
