@@ -40,7 +40,10 @@
       <input type="text" name="photoURL" ref="cuiphotosrc" placeholder="Photo URL here" class="form-control"><br>
 
       <button type="button" onclick={ submit }>
-        submit
+        Submit
+      </button>
+      <button type="button" onclick={ backToApp }>
+        Haven't decided
       </button>
     </div>
 
@@ -98,9 +101,14 @@
       alert("Succeed!");
 
       //change mode:
-      obervable.trigger('tofoodpage');
-
+      observable.trigger('tofoodpage');
     };
+
+    backToApp(e){
+      observable.trigger('tofoodpage');
+    }
+
+
   </script>
 
 </addmenu>

@@ -9,13 +9,13 @@
     <menu food={ food }>Menu</menu>
   </div>
 
-  <addmenu if={ this.showaddmenu}></addmenu>
+  <addmenu if={ this.showAddMenu}></addmenu>
 
   <script>
     var that = this;
     this.showFoodList = true;
     this.showMenu = false;
-    this.showaddmenu = false;
+    this.showAddMenu = false;
     this.food = null;
 
     observable.on('clickfood', function (food) {
@@ -29,17 +29,17 @@
     observable.on('addmenu', function () {
       that.showMenu = false;
       that.showFoodList = false;
-      that.showaddmenu = true;
+      that.showAddMenu = true;
       that.update();
     });
 
     observable.on('tofoodpage', function () {
       that.showMenu = false;
       that.showFoodList = true;
-      that.showaddmenu = false;
-      that.update;
+      that.showAddMenu = false;
+      that.update();
     })
-    
+
   </script>
 
 </app>
