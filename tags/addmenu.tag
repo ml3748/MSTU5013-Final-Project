@@ -21,11 +21,11 @@
 
       <span>Element:</span>
       <select ref="element" class="form-control">
-        <option value="a">a</option>
-        <option value="b">b</option>
-        <option value="c">c</option>
-        <option value="d">d</option>
-        <option value="e">e</option>
+        <option value="a">Multivitamin-rich Foods</option>
+        <option value="b">Omega-3 Foods</option>
+        <option value="c">Minerals-rich foods (Calcium, Magnisium, etc.)</option>
+        <option value="d">Protein-rich Foods</option>
+        <option value="e">Antioxidants-rich Foods</option>
       </select><br>
 
       <textarea name="name" rows="5" cols="10" class="form-control" placeholder="Steps" ref="steps"></textarea>

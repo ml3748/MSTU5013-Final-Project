@@ -1,24 +1,24 @@
 <foodpage>
   <!-- firstpage -->
-  <h1>All the food based on elements</h1>
+  <h1> All the food based on elements</h1>
   <div class="row">
-    <h2>Element a</h2>
+    <h2> Multivitamin-rich Foods</h2>
     <fooditem class="col-xs-4" each={ food in foodByElementa }></fooditem>
   </div>
   <div class="row">
-    <h2>Element b</h2>
+    <h2> Omega-3 Foods</h2>
     <fooditem class="col-xs-4" each={ food in foodByElementb }></fooditem>
   </div>
   <div class="row">
-    <h2>Element c</h2>
+    <h2>Minerals-rich foods (Calcium, Magnisium, etc.)</h2>
     <fooditem class="col-xs-4" each={ food in foodByElementc }></fooditem>
   </div>
   <div class="row">
-    <h2>Element d</h2>
+    <h2> Protein-rich Foods</h2>
     <fooditem class="col-xs-4" each={ food in foodByElementd }></fooditem>
   </div>
   <div class="row">
-    <h2>Element e</h2>
+    <h2> Antioxidants-rich Foods</h2>
     <fooditem class="col-xs-4" each={ food in foodByElemente }></fooditem>
   </div>
 
