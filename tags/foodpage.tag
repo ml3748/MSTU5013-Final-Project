@@ -10,7 +10,7 @@
     <fooditem class="col-xs-4" each={ food in foodByElementb }></fooditem>
   </div>
   <div class="row">
-    <h2>Minerals-rich foods (Calcium, Magnisium, etc.)</h2>
+    <h2> Minerals-rich foods (Calcium, Magnisium, etc.)</h2>
     <fooditem class="col-xs-4" each={ food in foodByElementc }></fooditem>
   </div>
   <div class="row">
