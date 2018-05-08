@@ -91,7 +91,8 @@
       background: url("https://www.logan.edu/mm/images/Nutrition/MSN-Main.jpg") no-repeat center center;
       background-size: cover;
       height: 62rem;
-      margin-bottom:-2rem;
+      padding:0;
+      margin:0;
     }
     .heading {
       margin-top: 20rem;
