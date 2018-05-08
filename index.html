@@ -5,14 +5,51 @@
   <meta charset="utf-8">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Lobster|Montserrat|Playfair+Display" rel="stylesheet">
   <title>Nutrition</title>
 </head>
 
 <body>
+  <div class="header">
+    <div class="container">
+      <ul class="nav">
+        <li>Start</li>
+        <li>Team</li>
+        <li>Contact</li>
+      </ul>
+    </div>
+  </div>
   <app></app>
 </body>
 
 </html>
+<style>
+  body {
+    background-color: smokewhite;
+
+  }
+
+  .header {
+    background-color: #333;
+  }
+
+  .container {
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 0 6rem;
+  }
+
+  .nav {
+    list-style-type: none;
+    margin: 0;
+    padding: 2rem 0;
+  }
+
+  li {
+    font-color: smokewhite;
+    font-family: Montserrat;
+  }
+</style>
 
 <script src="tags/app.tag" type="riot/tag"></script>
 <script src="tags/foodpage.tag" type="riot/tag"></script>
@@ -42,5 +79,4 @@
 
   // Initialize Riot
   riot.mount('*');
-
 </script>
