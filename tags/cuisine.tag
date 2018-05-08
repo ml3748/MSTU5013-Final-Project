@@ -26,6 +26,8 @@
       margin-left: auto;
       margin-right:auto;
       display:block;
+      max-height:30rem;
+
     }
     .typeName, .typeTaste,.typeMeal {
       font-family:Montserrat,sens-serif;

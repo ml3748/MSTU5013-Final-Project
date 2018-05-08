@@ -2,7 +2,7 @@
 
   <div class="container">
 
-    <h1>Add Your Cuisine Here!</h1>
+    <h1 class="text-center heading">Add Your Cuisine Here!</h1>
     <div class="form-group">
 
       <input type="text" name="cuisinename" ref="cuisinename" placeholder="Cuisine Name" class="form-control"><br>
@@ -38,13 +38,14 @@
       </div>
 
       <input type="text" name="photoURL" ref="cuiphotosrc" placeholder="Photo URL here" class="form-control"><br>
-
-      <button type="button" onclick={ submit }>
-        Submit
-      </button>
-      <button type="button" onclick={ backToApp }>
-        Haven't decided
-      </button>
+      <div class="text-center">
+        <button class="submit" type="button" onclick={ submit }>
+          Submit
+        </button>
+        <button class="cancel" type="button" onclick={ backToApp }>
+          Haven't decided
+        </button>
+      </div>
     </div>
 
   </div>
@@ -55,10 +56,10 @@
 
     submit(e) {
 
-      if (this.refs.cuisinename.value === "" || this.refs.foodName.value === "" ) { //why null could not work here?
-      alert("Please add a cuisine name and a food name!");
-      e.preventUpdate = true;// Prevents riot from auto update.
-      return false; // Short-circuits function (function exits here, does not continue.
+      if (this.refs.cuisinename.value === "" || this.refs.foodName.value === "") { //why null could not work here?
+        alert("Please add a cuisine name and a food name!");
+        e.preventUpdate = true; // Prevents riot from auto update.
+        return false; // Short-circuits function (function exits here, does not continue.
       }
 
       var cuisName = this.refs.cuisinename.value;
@@ -104,11 +105,29 @@
       observable.trigger('tofoodpage');
     };
 
-    backToApp(e){
+    backToApp(e) {
       observable.trigger('tofoodpage');
+    }
+  </script>
+  <style>
+    .heading {
+      font-size: 6rem;
+      font-family: Lobster,sens-serif;
+      color: #ff8080;
+    }
+    button {
+      font-size:2rem;
+      color:#ff6666;
+      background color:#ffe6e6;
+      font-family:Montserrat,sans-serif;
+    }
+    button:hover {
+      transition: 0.5s;
+      background:#ff6666;
+      color:#ffe6e6;
     }
 
 
-  </script>
-
+    }
+  </style>
 </addmenu>

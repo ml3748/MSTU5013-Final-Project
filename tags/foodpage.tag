@@ -90,7 +90,7 @@
     .joumbotron {
       background: url("https://www.logan.edu/mm/images/Nutrition/MSN-Main.jpg") no-repeat center center;
       background-size: cover;
-      height: 57rem;
+      height: 62rem;
       margin-bottom:-2rem;
     }
     .heading {
