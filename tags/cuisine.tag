@@ -1,12 +1,12 @@
 <cuisine>
   <div class="item">
-    <h3>{ cuisine.name }</h3>
+    <h3 class="text-center typeName"><strong>{ cuisine.name }</strong></h3>
     <div>
       <img class="rounded img-responsive" src={ cuisine.src } alt="picture">
-      <p>
+      <p class="text-center typeMeal">
         { cuisine.meal }
       </p>
-      <p>
+      <p class="text-center typeTaste">
         { cuisine.taste }
       </p>
     </div>
@@ -18,9 +18,18 @@
 
   <style>
     .item {
-      border: 2px solid blue;
+      border: 2px solid #ffe0cc;
       margin: 10px;
       padding: 5px;
+    }
+    img {
+      margin-left: auto;
+      margin-right:auto;
+      display:block;
+    }
+    .typeName, .typeTaste,.typeMeal {
+      font-family:Montserrat,sens-serif;
+      font-size:2rem;
     }
   </style>
 

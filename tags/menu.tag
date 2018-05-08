@@ -1,13 +1,13 @@
 <menu>
   <!-- The menu page; after the foodpage -->
-  <h1>
+  <h1 class="text-center heading">
     Menus for {this.opts.food}
   </h1>
   <div class="item">
     <cuisine each={ cuisine in allMenus }></cuisine>
   </div>
 
-    <button type="button" onclick = { createmenu } >Create your own Menu!</button>
+    <button class="text-center button" type="button" onclick = { createmenu } >Create your own Menu!</button>
 
 
   <script>
@@ -37,6 +37,26 @@
     }
   </script>
 
-  <style></style>
+  <style>
+  .heading {
+    font-family:Lobster, sens-serif;
+    font-size:5rem;
+    color:#ff8080;
+  }
+  .button {
+    margin-left: auto;
+    margin-right:auto;
+    display:block;
+    padding:5px 20px;
+    font-family:lobster, sens-serif;
+    font-size:3rem;
+    background-color:#ffa366;
+  }
+  .button:hover {
+    transition: background,.5s;
+    background-color:#b34700;
+    color:white;
+  }
+</style>
 
 </menu>
